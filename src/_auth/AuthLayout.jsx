@@ -1,5 +1,12 @@
 import Background from "../assets/Frame.svg";
 import { Outlet } from "react-router-dom";
+// eslint-disable-next-line no-unused-vars
+import { AnimatePresence, motion } from "framer-motion";
+import {
+  container,
+  formVariant,
+  imageVariant,
+} from "../animations/authAnimation";
 
 function AuthLayout() {
   return (
@@ -18,9 +25,12 @@ function AuthLayout() {
               </p>
             </div>
 
-            <img
+            <motion.img
               src={Background}
               alt="Auth Illustration"
+              variants={imageVariant}
+              initial="hidden"
+              animate="visible"
               className="w-[80%] max-w-139.5 h-auto object-contain"
             />
 
@@ -31,11 +41,16 @@ function AuthLayout() {
         </div>
 
         {/* Right Content */}
-        <div className="flex-1 flex justify-center items-center p-8">
-          <div className="w-full max-w-90">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="visible"
+          className="flex-1 flex justify-center items-center p-8"
+        >
+          <motion.div variants={formVariant} className="w-full max-w-90">
             <Outlet />
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </>
   );

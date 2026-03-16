@@ -1,9 +1,15 @@
 import Logo from "../assets/logo.svg";
+import { useNavigate } from "react-router-dom";
+// eslint-disable-next-line no-unused-vars
+import { AnimatePresence, motion } from "framer-motion";
+import { item } from "../animations/authAnimation";
 
 function LoginPage() {
+  const navigate = useNavigate();
+
   return (
     <div className=" justify-center items-center ">
-      <div className="pb-6 text-center">
+      <motion.div variants={item} className="pb-6 text-center">
         <div className="flex justify-center">
           <img src={Logo} alt="logo" />
         </div>
@@ -12,9 +18,9 @@ function LoginPage() {
         <p className="text-[16px] font-normal text-[#667085]">
           Welcome back! Please enter your details.
         </p>
-      </div>
+      </motion.div>
 
-      <form className="flex flex-col gap-5 mb-3">
+      <motion.form variants={item} className="flex flex-col gap-5 mb-3">
         <label className="text-body-medium flex flex-col gap-1">
           Student ID
           <input
@@ -43,13 +49,19 @@ function LoginPage() {
         <button type="submit" className="btn-auth btn-auth-text ">
           Sign in
         </button>
-      </form>
+      </motion.form>
 
-      <div className="flex justify-center">
+      <motion.div variants={item} className="flex justify-center">
         <p className="text-body-regular">
-          Don’t have an account?<span className="text-link">Sign up</span>
+          Don’t have an account?
+          <span
+            className="text-link cursor-pointer"
+            onClick={() => navigate("/signup")}
+          >
+            Sign up
+          </span>
         </p>
-      </div>
+      </motion.div>
     </div>
   );
 }
