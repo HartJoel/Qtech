@@ -42,7 +42,7 @@ export default function Sidebar() {
     <div
       onClick={() => !danger && setActive(label)}
       className={`
-        flex items-center gap-2.5 px-4 py-2.5 mx-2 rounded-lg cursor-pointer text-sm transition-all
+        flex items-center gap-2.5 px-4 py-2.5 mx-2 cursor-pointer text-sm transition-all
         ${active === label ? "bg-blue-600 text-white font-medium" : "text-gray-500 hover:bg-gray-100 hover:text-gray-900"}
         ${danger ? "text-red-500 hover:bg-red-50 hover:text-red-600" : ""}
       `}
@@ -70,7 +70,7 @@ export default function Sidebar() {
   );
 
   return (
-    <div className="w-64 bg-white border border-gray-200 rounded-xl py-5 shadow-sm flex flex-col">
+    <div className="w-64 bg-white border border-gray-200 py-5 shadow-sm flex flex-col  h-screen overflow-y-auto sticky top-0 overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
       {/* Brand */}
       <div className="flex items-center gap-2.5 px-4 pb-5 border-b border-gray-100">
         <div className="w-10 h-10 rounded-full bg-blue-800 flex items-center justify-center shrink-0">
