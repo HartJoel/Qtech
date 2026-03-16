@@ -47,7 +47,7 @@ function SignupPage() {
           <p className="text-body-regular">Must be at least 8 characters.</p>
         </label>
 
-        <button type="submit" className="btn-auth btn-auth-text ">
+        <button type="submit" className="btn-auth btn-auth-text " onClick={() => navigate("/student")}>
           Get started
         </button>
       </motion.form>

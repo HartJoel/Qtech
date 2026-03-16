@@ -38,6 +38,7 @@ const bottomItems = [
 export default function Sidebar() {
   const [active, setActive] = useState("Student");
 
+  // eslint-disable-next-line no-unused-vars
   const NavItem = ({ label, icon: Icon, hasChevron, danger }) => (
     <div
       onClick={() => !danger && setActive(label)}
@@ -70,7 +71,7 @@ export default function Sidebar() {
   );
 
   return (
-    <div className="w-64 bg-white border border-gray-200 py-5 shadow-sm flex flex-col  h-screen overflow-y-auto sticky top-0 overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+    <aside className="w-64 bg-white border border-gray-200 py-5 shadow-sm flex flex-col  h-screen overflow-y-auto sticky top-0 overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
       {/* Brand */}
       <div className="flex items-center gap-2.5 px-4 pb-5 border-b border-gray-100">
         <div className="w-10 h-10 rounded-full bg-blue-800 flex items-center justify-center shrink-0">
@@ -108,6 +109,6 @@ export default function Sidebar() {
       {bottomItems.map((item) => (
         <NavItem key={item.label} {...item} />
       ))}
-    </div>
+    </aside>
   );
 }

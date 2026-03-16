@@ -46,7 +46,7 @@ function LoginPage() {
           <p className="text-link">Forgot password</p>
         </div>
 
-        <button type="submit" className="btn-auth btn-auth-text ">
+        <button type="submit" className="btn-auth btn-auth-text " onClick={() => navigate("/student")}>
           Sign in
         </button>
       </motion.form>
