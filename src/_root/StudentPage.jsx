@@ -1,6 +1,7 @@
 import React from "react";
 import Sidebar from "../component/sidebar";
 import Navbar from "../component/Navbar.JSX";
+import AddStudentForm from "../component/AddStudentForm";
 
 function StudentPage() {
   return (
@@ -14,7 +15,7 @@ function StudentPage() {
 
         {/* Page content scrolls here */}
         <main className="flex-1 overflow-y-auto bg-gray-100 p-6">
-  
+          <AddStudentForm />
         </main>
       </div>
     </div>
