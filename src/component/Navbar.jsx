@@ -1,5 +1,5 @@
 import { Menu, Search, ChevronDown } from "lucide-react";
-import NavLogo from "../assets/school_logo (2).svg";
+import NavLogo from "../assets/school_logo (3).svg";
 
 export default function Navbar({ onMenuToggle }) {
   return (
